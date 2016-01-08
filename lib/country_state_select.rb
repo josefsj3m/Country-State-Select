@@ -20,7 +20,8 @@ module CountryStateSelect
   end
 
   #Pass array of unwanted countries to get back all except those in the array
-  def self.countries_except_locale(*except,loc='en')
+  def self.countries_except_locale(*except,loc)
+    loc = 'en' if loc.nil?
     countries_collection_locale(loc).collect { |c| c unless except.include?(c.second) }.compact
   end
 

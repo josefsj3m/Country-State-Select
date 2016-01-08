@@ -3,8 +3,8 @@
 This is a fork from de original Country State Select to use the countries gem and add three new methods:
 
   1. cs_update - This methods updates the list of cities of the city-state gem. It retrieves the list from MaxMind and updates it.
-  2. countries_collection_locale(locale=:en) - This method is similar to the method countries_collection, but it uses a locale to get country info from countries gem instead of city-state gem.    
-  3. countries_except_locale(*except,locale=:en) - This method is similar to the method countries_except(*except), but it uses countries gem instead of city-state gem. 
+  2. countries_collection_locale(locale_code='en') - This method is similar to the method countries_collection, but it uses a locale to get country info from countries gem instead of city-state gem.    
+  3. countries_except_locale(locale_code='en',*except) - This method is similar to the method countries_except(*except), but it uses countries gem instead of city-state gem. 
 
 ##Country State Select [![Build Status](https://travis-ci.org/arvindvyas/Country-State-Select.svg?branch=master)](https://travis-ci.org/arvindvyas/Country-State-Select)  [![Code Climate](https://codeclimate.com/github/arvindvyas/Country-State-Select/badges/gpa.svg)](https://codeclimate.com/github/arvindvyas/Country-State-Select)
 

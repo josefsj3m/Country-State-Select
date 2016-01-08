@@ -15,13 +15,13 @@ module CountryStateSelect
   end
 
   #Collect countries from countries gem
-  def self.countries_collection_locale(locale='en')
-    Country.all_names_with_codes(locale).compact
+  def self.countries_collection_locale(loc='en')
+    Country.all_names_with_codes(loc).compact
   end
 
   #Pass array of unwanted countries to get back all except those in the array
-  def self.countries_except_locale(*except,locale='en')
-    countries_collection_locale(locale).collect { |c| c unless except.include?(c.second) }.compact
+  def self.countries_except_locale(*except,loc='en')
+    countries_collection_locale(loc).collect { |c| c unless except.include?(c.second) }.compact
   end
 
   #Collect the Countries

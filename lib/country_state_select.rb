@@ -10,7 +10,7 @@ require "countries"
 module CountryStateSelect
 
   #Update CS db from MaxMind
-  def cs_update
+  def self.cs_update
     CS.update
   end
 

@@ -15,7 +15,8 @@ module CountryStateSelect
   end
 
   #Collect countries from countries gem
-  def self.countries_collection_locale(loc='en')
+  def self.countries_collection_locale(loc)
+    loc = 'en' if loc.nil?
     Country.all_names_with_codes(loc).compact
   end
 

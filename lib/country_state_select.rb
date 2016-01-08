@@ -6,6 +6,7 @@ require "compass-rails"
 require "chosen-rails"
 require "simple_form"
 require "countries"
+require "countries/global"
 
 module CountryStateSelect
 

@@ -28,5 +28,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'chosen-rails', "~> 1.4"
   spec.add_runtime_dependency 'compass-rails', '~> 2.0'
   spec.add_runtime_dependency 'city-state'
-  spec.add_runtime_dependency 'countries', :require => 'countries/global'
+  spec.add_runtime_dependency 'countries'
 end

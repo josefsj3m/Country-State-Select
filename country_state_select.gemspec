@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'rails'
   spec.add_runtime_dependency 'simple_form', "~> 3.2"
   spec.add_runtime_dependency 'chosen-rails', "~> 1.4"
-  spec.add_runtime_dependency 'compass-rails', '~> 2.0.4'
+  spec.add_runtime_dependency 'compass-rails', '~> 2.0.1'
   spec.add_runtime_dependency 'city-state'
   spec.add_runtime_dependency 'countries'
 end

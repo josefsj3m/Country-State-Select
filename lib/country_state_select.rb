@@ -10,39 +10,47 @@ require "countries/global"
 
 module CountryStateSelect
 
-  #Update CS db from MaxMind
+  # Update CS db from MaxMind
   def self.cs_update
     CS.update
   end
+  # Return the underlying object CS from city-state gem.
+  def cities_state
+    CS
+  end
+  # Return the underlying object Country from countries gem.
+  def country
+    Country
+  end
 
-  #Collect countries from countries gem
+  # Collect countries from countries gem
   def self.countries_collection_locale(locale_code='en')
     Country.all_names_with_codes(locale_code).compact
   end
 
-  #Pass array of unwanted countries to get back all except those in the array
+  # Pass array of unwanted countries to get back all except those in the array
   def self.countries_except_locale(locale_code='en',*except)
     countries_collection_locale(locale_code).collect { |c| c unless except.include?(c.second) }.compact
   end
 
-  #Collect the Countries
+  # Collect the Countries
   def self.countries_collection
     CS.countries.except!(:COUNTRY_ISO_CODE).collect {|p| [ p[ 1], p[0] ] }.compact
   end
 
-  #Pass array of unwanted countries to get back all except those in the array
+  # Pass array of unwanted countries to get back all except those in the array
   def self.countries_except(*except)
     countries_collection.collect { |c| c unless except.include?(c.second) }.compact
   end
 
-  #Return either the State (String) or States (Array)
+  # Return either the State (String) or States (Array)
   def self.states_collection(f, options)
     states = collect_states(f.object.send(options[:country]))
     return f.object.send(options[:state]) if states.size == 0
     states
   end
 
-   #Return either the City (String) or Cities (Array)
+   # Return either the City (String) or Cities (Array)
   def self.cities_collection(f, options)
     cities = collect_cities(f.object.send(options[:state]))
     cities

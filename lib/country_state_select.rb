@@ -15,11 +15,11 @@ module CountryStateSelect
     CS.update
   end
   # Return the underlying object CS from city-state gem.
-  def cities_state
+  def self.city_state
     CS
   end
   # Return the underlying object Country from countries gem.
-  def country
+  def self.country
     Country
   end
 
